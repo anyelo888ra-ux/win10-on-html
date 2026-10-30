@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows 10 Web OS Simulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- El Escritorio de Windows 10 -->
+<div id="desktop">
+  <p class="instruccion">Haz clic derecho en cualquier parte del escritorio y doble clic en los iconos</p>
+  
+  <!-- Contenedor para los Iconos del Escritorio -->
+  <div class="desktop-icons">
+    <!-- Icono 1: Este Equipo -->
+    <div class="shortcut" id="pc-icon">
+      <img src="este equipo.png" alt="Este Equipo">
+      <span>Este equipo</span>
+    </div>
+    
+    <!-- Icono 2: Papelera de Reciclaje -->
+    <div class="shortcut" id="trash-icon">
+      <img src="trash bin empty.png" alt="Papelera">
+      <span>Papelera de reciclaje</span>
+    </div>
+  </div> <!-- Cierre correcto de desktop-icons -->
+</div> <!-- ¡Corregido! Cierre correcto de desktop -->
+
+<!-- Menú personalizado del Clic Derecho (Context Menu) -->
+<div id="custom-menu" class="win10-menu">
+  <div class="menu-item">Ver <span>▶</span></div>
+  <div class="menu-item">Ordenar por <span>▶</span></div>
+  <div class="menu-item" id="refresh-btn">Actualizar</div>
+  <hr>
+  <div class="menu-item font-bold">Nuevo <span>▶</span></div>
+  <hr>
+  <div class="menu-item">Configuración de pantalla</div>
+  <div class="menu-item">Personalizar</div>
+</div>
+
+<!-- Menú de Inicio de Windows 10 (Oculto al inicio) -->
+<div id="start-menu" class="win10-start-menu">
+  <!-- Barra lateral izquierda del menú de inicio -->
+  <div class="start-sidebar">
+    <div class="sidebar-item">👤</div>
+    <div class="sidebar-item">⚙️</div>
+    <div class="sidebar-item" id="power-btn">🔌</div>
+  </div>
+  <!-- Lista de aplicaciones simuladas -->
+  <div class="start-apps">
+    <div class="app-item font-bold">Más usadas</div>
+    <div class="app-item">🌐 Google Chrome</div>
+    <div class="app-item">📝 Bloc de notas</div>
+    <div class="app-item">🎮 Roblox</div>
+  </div>
+</div>
+
+<!-- Barra de tareas (Abajo) -->
+<div id="taskbar">
+  <div class="start-button" id="start-win-btn">
+    <svg viewBox="0 0 24 24" width="18" height="18"><path fill="white" d="M0 3.449L9.75 2.1v9.451H0V3.449zM0 12.45h9.75v9.45L0 20.551v-8.101zM11.25 1.89l12.75-1.89v11.45h-12.75V1.89zm12.75 11.661V24l-12.75-1.89v-8.56h12.75z"/></svg>
+  </div>
+  
+  <!-- Contenedor del reloj en la esquina derecha -->
+  <div class="taskbar-clock" id="win10-clock">
+    <div id="clock-time">00:00</div>
+    <div id="clock-date">00/00/0000</div>
+  </div>
+</div>
+
+<!-- Ventana flotante de Windows 10 (Oculta al inicio) -->
+<div id="win-window" class="window">
+  <!-- Barra superior de la ventana -->
+  <div class="window-header">
+    <div class="window-title">
+      <img src="este equipo.png" width="16" height="16">
+      <span>Este equipo</span>
+    </div>
+    <div class="window-controls">
+      <div class="control-btn">—</div>
+      <div class="control-btn">⬜</div>
+      <div class="control-btn close-btn" id="close-win-btn">✕</div>
+    </div>
+  </div>
+  <!-- Contenido interno de la ventana -->
+  <div class="window-body">
+    <p style="color: #333; font-size: 13px;">Esta carpeta está vacía.</p>
+  </div>
+</div>
+
+<!-- Ventana flotante del Bloc de Notas (Oculta al inicio) -->
+<div id="notepad-window" class="window" style="width: 500px; height: 350px; left: 35%;">
+  <!-- Barra superior -->
+  <div class="window-header">
+    <div class="window-title">
+      <span>📝 Sin título: Bloc de notas</span>
+    </div>
+    <div class="window-controls">
+      <div class="control-btn">—</div>
+      <div class="control-btn">⬜</div>
+      <div class="control-btn close-btn" id="close-notepad-btn">✕</div>
+    </div>
+  </div>
+  <!-- Cuerpo con un área de texto real para escribir -->
+  <div class="window-body" style="padding: 0; background: white;">
+    <textarea class="notepad-textarea" placeholder="Empieza a escribir aquí..."></textarea>
+  </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
